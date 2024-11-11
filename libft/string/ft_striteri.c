@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcsilv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 10:56:49 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/05/14 10:59:01 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/05/19 13:43:17 by marcsilv          #+#    #+#             */
+/*   Updated: 2024/11/11 18:24:04 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int	ft_toupper(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (c >= 'a' && c <= 'z')
+	unsigned int	i;
+
+	i = 0;
+	if (s == NULL || f == NULL)
+		return ;
+	while (s[i] != '\0')
 	{
-		c = c - 32;
+		f(i, &s[i]);
+		i++;
 	}
-	return (c);
 }
+/*applis a functions 'f' to each character of the string*/

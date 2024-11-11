@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   rm_str_matrix_index.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 10:47:13 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 18:18:14 by welepy           ###   ########.fr       */
+/*   Created: 2024/11/11 17:42:51 by welepy            #+#    #+#             */
+/*   Updated: 2024/11/11 17:44:11 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool inline	ft_isprint(int c)
+char	**rm_str_matrix_index(char **matrix, int index)
 {
-	return (c >= 32 && c <= 126);
+	char	**new_matrix;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	new_matrix = (char **)malloc(sizeof(char *) * (matrix_len(matrix)));
+	if (!new_matrix)
+		return (NULL);
+	while (matrix[i])
+	{
+		if (i != index)
+		{
+			new_matrix[j] = ft_strdup(matrix[i]);
+			j++;
+		}
+		i++;
+	}
+	new_matrix[j] = NULL;
+	free_matrix(matrix);
+	return (new_matrix);
 }

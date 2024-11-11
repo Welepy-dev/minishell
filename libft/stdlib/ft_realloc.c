@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 10:47:13 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 18:18:14 by welepy           ###   ########.fr       */
+/*   Created: 2024/11/11 17:39:42 by welepy            #+#    #+#             */
+/*   Updated: 2024/11/11 17:42:28 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool inline	ft_isprint(int c)
+void	*ft_realloc(void *ptr, size_t size)
 {
-	return (c >= 32 && c <= 126);
+	void	*new_ptr;
+
+	new_ptr = malloc(size);
+	if (!new_ptr)
+	{
+		perror("Memory allocation failed");
+		exit(EXIT_FAILURE);
+	}
+	ft_memcpy(new_ptr, ptr, size);
+	free(ptr);
+	return (new_ptr);
 }

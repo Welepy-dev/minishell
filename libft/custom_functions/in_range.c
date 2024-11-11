@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   in_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:02:53 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 14:03:18 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:26:48 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	in_range(int n, int min, int max)
+bool inline	in_range(int n, int min, int max)
 {
-	if (n >= min && n <= max)
-		return (1);
-	else
-		return (0);
+	return (n >= min && n <= max);
 }
