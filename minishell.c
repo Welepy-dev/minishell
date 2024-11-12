@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:22:46 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 16:45:46 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 17:12:51 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ int	main(int ac, char **av, char **env)
 	
 	(void)av;
 	if (ac != 1)
-	{
-		ft_putendl_fd("Error: too many arguments", 2);
-		return (1);
-	}
+		print_error("Error: too many arguments", 2);
 
 	//initialize shell
 	//read the input

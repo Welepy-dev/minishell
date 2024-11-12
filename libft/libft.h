@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 16:53:04 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 17:06:22 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ bool	in_range(int n, int min, int max);
 
 void	*safe_malloc(size_t size);
 void	free_matrix(char **matrix);
+void	clean_and_exit(void *data);
 void	ft_bzero(void *s, size_t n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
@@ -69,6 +70,7 @@ void	*ft_realloc(void *ptr, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	print_error(char *error_message, void *data);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
