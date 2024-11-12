@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 17:06:22 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:08:54 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <errno.h>
 # include <stdarg.h>
 # include "./lists/ft_list.h"
+# include "../minishell.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -54,6 +55,7 @@ bool	ft_islower(int c);
 bool	ft_isprint(int c);
 bool	ft_isalnum(int c);
 bool	ft_isalpha(int c);
+
 bool	ft_isascii(int c);
 bool	ft_isspace(int c);
 bool	in_range(int n, int min, int max);

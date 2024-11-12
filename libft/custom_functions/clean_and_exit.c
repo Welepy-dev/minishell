@@ -6,11 +6,11 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:05:06 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/12 17:05:15 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 17:31:16 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../libft.h"
 
 void	clean_and_exit(void *data)
 {

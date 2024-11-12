@@ -6,13 +6,16 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:36 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 15:24:12 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:10:27 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
+# include <readline/readline.h>
+# include <readline/history.h>
+# include "./libft/libft.h"
 # include <sys/types.h>
 # include <sys/wait.h>
 # include <sys/stat.h>
@@ -20,13 +23,17 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include "./libft/libft.h"
+
+typedef struct s_shell	t_shell;
 
 typedef enum	e_type
 {
 	COMMAND,
 	ARGUMENT,
 	OPERATOR,
+	REDIRECTION,
+	VARIABLE,
+	SIGNAL,
 }	t_type;
 
 typedef struct s_token
@@ -43,17 +50,12 @@ typedef struct s_tree
 	struct s_tree	*right;
 }	t_tree;
 
-typedef struct s_shell
+struct s_shell
 {
 	t_token	*token;
 	t_tree	*tree;
 	char	**matrix;
 	char	*input;
-}	t_shell;
-
+};
 
 #endif
-
-/*struct named tokens: will have command arguments and operators*/
-/*to tokenize:
-skip unnecessary whitespace*/
