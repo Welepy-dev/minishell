@@ -6,11 +6,11 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:02:53 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 13:48:40 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 16:46:39 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 bool	in_range(int n, int min, int max)
 {

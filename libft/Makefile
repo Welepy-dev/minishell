@@ -6,7 +6,7 @@
 #    By: welepy <welepy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 01:14:20 by marcsilv          #+#    #+#              #
-#    Updated: 2024/11/12 14:04:37 by welepy           ###   ########.fr        #
+#    Updated: 2024/11/12 16:47:29 by welepy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ CTYPE = ./ctype/*.c
 CUSTOM = ./custom_functions/*.c
 CUSTOM_ = ./custom_functions/length/*.c
 MATRIX = ./custom_functions/matrix/*.c
+BOOLS = ./custom_functions/bools/*.c
 PRINTF = ./ft_printf/*.c
 LISTS = ./lists/*.c
 MATH = ./math/*.c
@@ -28,7 +29,7 @@ SAFE_FUNCTIONS = ./safe_functions/*.c
 STDLIB = ./stdlib/*.c
 STRING = ./string/*.c
 
-SRC_FILES = $(CTYPE) $(CUSTOM) $(PRINTF) $(LISTS) $(MATH) $(SAFE_FUNCTIONS) $(STDLIB) $(STRING) $(CUSTOM_) $(MATRIX)
+SRC_FILES = $(CTYPE) $(CUSTOM) $(PRINTF) $(LISTS) $(MATH) $(SAFE_FUNCTIONS) $(STDLIB) $(STRING) $(CUSTOM_) $(MATRIX) $(BOOLS)
             
 OBJ_FILES = $(SRC_FILES:.c=.o)
 OBJ_PATHS = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
