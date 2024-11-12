@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:07 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/12 16:53:52 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:14:28 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,31 +63,31 @@ int     upper(unsigned int decimalnumber)
         return (i);
 }
 
-int     find_specifier(char myString, va_list args)
+int     find_specifier(char my_string, va_list args)
 {
         int     length;
 
         length = 0;
-        if (myString == 'c')
+        if (my_string == 'c')
                 length += ft_putchar(va_arg(args, int));
-        else if (myString == 's')
+        else if (my_string == 's')
                 length += ft_putstr(va_arg(args, char *));
-        else if (myString == 'p')
+        else if (my_string == 'p')
                 length += ft_print_ptr(va_arg(args, unsigned long long *));
-        else if (myString == 'd' || myString == 'i')
+        else if (my_string == 'd' || my_string == 'i')
                 length += ft_putnbr(va_arg(args, int));
-        else if (myString == 'u')
+        else if (my_string == 'u')
                 length += ft_print_unsigned(va_arg(args, unsigned int));
-        else if (myString == 'x')
+        else if (my_string == 'x')
                 length += lower(va_arg(args, unsigned int));
-        else if (myString == 'X')
+        else if (my_string == 'X')
                 length += upper(va_arg(args, unsigned int));
-        else if (myString == '%')
+        else if (my_string == '%')
                 length += ft_putchar('%');
         return (length);
 }
 
-int     ft_printf(const char *myString, ...)
+int     ft_printf(const char *my_string, ...)
 {
         int             length;
         int             i;
@@ -95,16 +95,16 @@ int     ft_printf(const char *myString, ...)
 
         i = 0;
         length = 0;
-        va_start(args, myString);
-        while (myString[i] != '\0')
+        va_start(args, my_string);
+        while (my_string[i] != '\0')
         {
-                if (myString[i] == '%')
+                if (my_string[i] == '%')
                 {
-                        length += find_specifier(myString[i + 1], args);
+                        length += find_specifier(my_string[i + 1], args);
                         i++;
                 }
                 else
-                        length += ft_putchar(myString[i]);
+                        length += ft_putchar(my_string[i]);
                 i++;
         }
         va_end (args);
