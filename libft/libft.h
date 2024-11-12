@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 14:09:56 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 16:53:04 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,12 @@ int		ft_putnbr(int n);
 int		tablen(int *tab);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
 int		ft_atoi(const char *str);
 int		matrix_len(char **matrix);
+int		ft_print_unsigned(unsigned int n);
+int		ft_print_ptr(unsigned long long *ptr);
 int		ft_printf(const char *my_string, ...);
 int		*quicksort(int *tab, unsigned int size);
 int		ft_strcmp(const char *s1, const char *s2);

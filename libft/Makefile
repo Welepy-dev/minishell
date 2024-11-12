@@ -6,7 +6,7 @@
 #    By: welepy <welepy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 01:14:20 by marcsilv          #+#    #+#              #
-#    Updated: 2024/11/12 16:47:29 by welepy           ###   ########.fr        #
+#    Updated: 2024/11/12 16:48:50 by welepy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CUSTOM = ./custom_functions/*.c
 CUSTOM_ = ./custom_functions/length/*.c
 MATRIX = ./custom_functions/matrix/*.c
 BOOLS = ./custom_functions/bools/*.c
-PRINTF = ./ft_printf/*.c
+PRINTF = ./custom_functions/prints/*.c
 LISTS = ./lists/*.c
 MATH = ./math/*.c
 SAFE_FUNCTIONS = ./safe_functions/*.c

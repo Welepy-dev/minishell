@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:10:17 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/12 14:15:04 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 16:52:09 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_putstr(char *str)
 	}
 	return (i);
 }
-int	ft_print_ptr(void *ptr)
+int	ft_print_ptr(unsigned long long *ptr)
 {
 	int	len;
 

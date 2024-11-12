@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:07:07 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/12 14:08:23 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 16:53:52 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int     find_specifier(char myString, va_list args)
         else if (myString == 's')
                 length += ft_putstr(va_arg(args, char *));
         else if (myString == 'p')
-                length += ft_print_ptr(va_arg(args, unsigned long long));
+                length += ft_print_ptr(va_arg(args, unsigned long long *));
         else if (myString == 'd' || myString == 'i')
                 length += ft_putnbr(va_arg(args, int));
         else if (myString == 'u')
