@@ -3,23 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: welepy <welepy@student.42.fr>              +#+  +:+       +#+         #
+#    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 14:34:20 by welepy            #+#    #+#              #
-#    Updated: 2024/11/12 18:00:53 by welepy           ###   ########.fr        #
+#    Updated: 2024/11/12 18:35:19 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    = minishell
-CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
-OBJS    = $(SRCS:.c=.o)
-SRCS    = minishell.c
+NAME	= minishell
+CC	= cc
+CFLAGS	= -Wall -Wextra -Werror -lreadline
+OBJS	= $(SRCS:.c=.o)
+SRCS	= minishell.c
+LIBFT	= ./libft/libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
 clean: 
 	rm -f $(OBJS)
