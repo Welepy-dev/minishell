@@ -6,13 +6,13 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 10:41:51 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 18:17:55 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 13:48:40 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool inline	ft_isascii(int c)
+bool	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

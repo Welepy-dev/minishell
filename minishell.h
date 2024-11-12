@@ -3,41 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:36 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 13:31:32 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:24:12 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/wait.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+# include <sys/types.h>
+# include <sys/wait.h>
+# include <sys/stat.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include "./libft/libft.h"
 
-typedef struct s_cmd
+typedef enum	e_type
 {
-	char	*cmd;
-	char	**args;
-}	t_cmd;
+	COMMAND,
+	ARGUMENT,
+	OPERATOR,
+}	t_type;
 
-typedef struct s_env
+typedef struct s_token
 {
-	char	*key;
 	char	*value;
-}	t_env;
-
-typedef struct s_shell
-{
-	t_cmd	*cmd;
-	t_env	*env;
-}	t_shell;
+	t_type	type;
+    	struct s_token *next;
+}	t_token;
 
 typedef struct s_tree
 {
@@ -46,4 +43,17 @@ typedef struct s_tree
 	struct s_tree	*right;
 }	t_tree;
 
+typedef struct s_shell
+{
+	t_token	*token;
+	t_tree	*tree;
+	char	**matrix;
+	char	*input;
+}	t_shell;
+
+
 #endif
+
+/*struct named tokens: will have command arguments and operators*/
+/*to tokenize:
+skip unnecessary whitespace*/

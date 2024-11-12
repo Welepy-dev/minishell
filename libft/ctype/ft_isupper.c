@@ -6,13 +6,13 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:47:20 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 17:24:21 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 13:48:40 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool inline	ft_isupper(int c)
+bool	ft_isupper(int c)
 {
 	return (c >= 'A' && c <= 'Z');
 }

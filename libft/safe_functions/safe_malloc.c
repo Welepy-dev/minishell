@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   safe_malloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:39:48 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 13:40:41 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:04:23 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*safe_malloc(size_t size)
 	ptr = malloc(size);
 	if (!ptr)
 	{
-		perror("Memory allocation failed");
+		ft_putendl_fd("Malloc failed", 2);
 		exit(EXIT_FAILURE);
 	}
 	return (ptr);

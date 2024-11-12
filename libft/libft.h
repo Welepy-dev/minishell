@@ -6,7 +6,7 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 18:36:52 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 14:09:56 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <ctype.h>
+# include <errno.h>
+# include <stdarg.h>
 # include "./lists/ft_list.h"
 
 # ifndef BUFFER_SIZE
@@ -33,24 +35,24 @@ int		ft_putnbr(int n);
 int		tablen(int *tab);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		ft_putstr(const char *s);
 int		ft_atoi(const char *str);
 int		matrix_len(char **matrix);
+int		ft_printf(const char *my_string, ...);
 int		*quicksort(int *tab, unsigned int size);
 int		ft_strcmp(const char *s1, const char *s2);
 int		*r_quicksort(int *tab, unsigned int size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-bool inline	ft_isdigit(int c);
-bool inline	ft_isupper(int c);
-bool inline	ft_islower(int c);
-bool inline	ft_isprint(int c);
-bool inline	ft_isalnum(int c);
-bool inline	ft_isalpha(int c);
-bool inline	ft_isascii(int c);
-bool inline	ft_isspace(int c);
-bool inline	in_range(int n, int min, int max);
+bool	ft_isdigit(int c);
+bool	ft_isupper(int c);
+bool	ft_islower(int c);
+bool	ft_isprint(int c);
+bool	ft_isalnum(int c);
+bool	ft_isalpha(int c);
+bool	ft_isascii(int c);
+bool	ft_isspace(int c);
+bool	in_range(int n, int min, int max);
 
 void	*safe_malloc(size_t size);
 void	free_matrix(char **matrix);
@@ -97,8 +99,3 @@ char	**add_str_matrix(char **matrix, char *str);
 char	**rm_str_matrix_index(char **matrix, int index);
 
 #endif
-
-/*div
-stpcpy
-remove element from matrix
-shift left/right (arrays (int, char), lists, matrix)*/

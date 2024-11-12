@@ -6,13 +6,13 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:47:00 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 18:17:41 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 13:48:40 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool inline	ft_islower(int c)
+bool	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }

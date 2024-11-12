@@ -6,13 +6,13 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 09:02:44 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 18:17:26 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 13:48:40 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool inline	ft_isalnum(int c)
+bool	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }

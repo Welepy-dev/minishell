@@ -6,11 +6,11 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:36:31 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/11 17:42:15 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 14:04:55 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 char	**add_str_matrix(char **matrix, char *str)
 {

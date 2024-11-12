@@ -6,13 +6,13 @@
 /*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:46:22 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 17:23:59 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/12 13:48:40 by welepy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool inline	ft_isspace(int c)
+bool	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
 }
