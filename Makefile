@@ -6,7 +6,7 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 14:34:20 by welepy            #+#    #+#              #
-#    Updated: 2024/11/13 10:11:43 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/13 11:49:29 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,9 @@ all: $(NAME)
 LIBMAKE = $(MAKE) -C $(LIBFT)
 
 $(NAME):	$(OBJ_PATHS) 
-		$(MAKE) -C $(LIBFT)
-		$(CC) $(OBJ_PATHS) -L./libft -lft $(LRFLAGS) $(CFLAGS) -o $(NAME)
+		@echo "Compiling $(NAME)..."
+		@$(MAKE) -C $(LIBFT)
+		@$(CC) $(OBJ_PATHS) -L./libft -lft $(LRFLAGS) $(CFLAGS) -o $(NAME)
 
 # Recursively invoke make in the subfolder
 submake:

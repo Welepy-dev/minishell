@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 10:23:41 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:22:47 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+typedef struct s_list t_list;
 
 int		ft_abs(int n);
 int		numlen(int n);
@@ -102,9 +104,12 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	**copy_matrix(char **matrix);
+char	**list_to_matrix(t_list *list);
 char	**ft_split(char const *s, char c);
 char	**ft_split(char const *str, char c);
 char	**add_str_matrix(char **matrix, char *str);
 char	**rm_str_matrix_index(char **matrix, int index);
+
+t_list	*matrix_to_list(char **matrix);
 
 #endif

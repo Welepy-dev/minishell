@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:22:46 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 11:03:39 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:12:34 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,7 @@ if is a'$' first expands it and sees if is a command if not, writes command not 
 /*struct named tokens: will have command arguments and operators*/
 /*to tokenize:
 skip unnecessary whitespace*/
+
+/*first split
+then expand if there is
+then tokenise*/
