@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_to_list.c                                   :+:      :+:    :+:   */
+/*   ft_strbspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 11:09:51 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 14:23:56 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/11/13 16:03:09 by marcsilv          #+#    #+#             */
+/*   Updated: 2024/11/13 16:04:56 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-t_list	*matrix_to_list(char **matrix)
+bool	ft_strbspn(char *str, char accept)
 {
-	t_list	*list;
-	t_list	*new;
-	int		i;
-
-	list = NULL;
-	i = 0;
-	while (matrix[i])
+	while (*str)
 	{
-		new = ft_lstnew(matrix[i]);
-		if (!new)
-		{
-			ft_lstclear(&list, free);
-			return (NULL);
-		}
-		ft_lstadd_back(&list, new);
-		i++;
+		if (*str != accept)
+			return (false);
+		++str;
 	}
-	return (list);
+	return(true);
 }

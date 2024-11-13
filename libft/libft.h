@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 11:22:47 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:06:10 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@
 #  define BUFFER_SIZE 42
 # endif
 
-typedef struct s_list t_list;
+typedef struct s_list	t_list;
+typedef struct s_shell	t_generic;
 
 int		ft_abs(int n);
 int		numlen(int n);
@@ -58,18 +59,19 @@ bool	ft_islower(int c);
 bool	ft_isprint(int c);
 bool	ft_isalnum(int c);
 bool	ft_isalpha(int c);
-
 bool	ft_isascii(int c);
 bool	ft_isspace(int c);
 bool	in_range(int n, int min, int max);
+bool	ft_strbspn(char *str, char accept);
+bool	contains_char(char *str, char *set);
 
 void	*safe_malloc(size_t size);
 void	free_matrix(char **matrix);
-void	clean_and_exit(void *data);
 void	ft_bzero(void *s, size_t n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	clean_and_exit(t_generic *data);
 void	ft_putstr_fd(const char *s, int fd);
 void	*ft_realloc(void *ptr, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
@@ -93,6 +95,7 @@ char	*ft_strdup(const char *s);
 char	*ft_strsjoin(char *s1, char *s2);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
+char	*ft_strndup(const char *s1, size_t n);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strscat(char *dest, const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);

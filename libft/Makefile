@@ -6,7 +6,7 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 01:14:20 by marcsilv          #+#    #+#              #
-#    Updated: 2024/11/13 11:53:26 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/13 16:06:04 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,14 @@ INC_DIR		= 	includes
 OBJ_DIR		= 	.
 HEADER		= 	libft.h
 CTYPE		=	./ctype/ft_isalnum.c				\
-			./ctype/ft_isalpha.c				\
 			./ctype/ft_isascii.c				\
 			./ctype/ft_isdigit.c				\
 			./ctype/ft_islower.c				\
+			./ctype/ft_isupper.c				\
 			./ctype/ft_isprint.c				\
 			./ctype/ft_isspace.c				\
 			./ctype/ft_tolower.c				\
+			./ctype/ft_isalpha.c				\
 			./ctype/ft_toupper.c				
 
 PRINTF		=	./custom_functions/prints/ft_put.c		\
@@ -48,6 +49,8 @@ MATRIX		=	./custom_functions/matrix/copy_matrix.c		\
 BOOLS		=	./custom_functions/bools/isneg.c 		\
 			./custom_functions/bools/ispos.c		\
 			./custom_functions/bools/in_range.c		\
+			./custom_functions/bools/contains_char.c	\
+			./custom_functions/bools/ft_strbspn.c		\
 
 LISTS		=	./lists/ft_lstadd_back.c			\
 			./lists/ft_lstadd_front.c			\
@@ -95,7 +98,8 @@ STRING		= 	./string/ft_bzero.c				\
 			./string/ft_strsjoin.c				\
 			./string/ft_strsncat.c				\
 			./string/ft_strtrim.c				\
-			./string/ft_substr.c
+			./string/ft_substr.c				\
+			./string/ft_strndup.c				\
 
 STDLIB		= 	./stdlib/ft_abs.c				\
 			./stdlib/ft_atof.c				\

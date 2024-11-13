@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_to_list.c                                   :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 11:09:51 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 14:23:56 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/11/13 12:36:10 by marcsilv          #+#    #+#             */
+/*   Updated: 2024/11/13 12:36:22 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../libft.h"
 
-t_list	*matrix_to_list(char **matrix)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	t_list	*list;
-	t_list	*new;
-	int		i;
+	char	*str;
+	size_t	i;
 
-	list = NULL;
 	i = 0;
-	while (matrix[i])
+	str = malloc(sizeof(char) * (n + 1));
+	if (!str)
+		return (NULL);
+	while (s1[i] && i < n)
 	{
-		new = ft_lstnew(matrix[i]);
-		if (!new)
-		{
-			ft_lstclear(&list, free);
-			return (NULL);
-		}
-		ft_lstadd_back(&list, new);
+		str[i] = s1[i];
 		i++;
 	}
-	return (list);
+	str[i] = 0;
+	return (str);
 }

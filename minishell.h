@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:36 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 11:09:10 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:54:13 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,7 @@ struct s_shell
 	char	**matrix;
 	char	*input;
 };
+
+char	**split_input(char *input);
 
 #endif
