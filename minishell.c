@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:22:46 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 10:00:00 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:23:20 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 int	main(int ac, char **av, char **env)
 {
 	t_shell	shell;
-	
+
 	(void)av;
 	(void)env;
 	if (ac != 1)
 		print_error("Error: too many arguments", &shell);
-
 	//initialize shell
 	//read the input
 	while (1)
@@ -49,12 +48,10 @@ when ctrl + C is send a signal to cancel the current command
 when ctrl + \ is pressed, do nothing
 */
 
-
 /*looks first for commands or redirections*/
 /*if the first token is a '*' will have the default behaviour of the shell
 if is a'$' first expands it and sees if is a command if not, writes command not found*/
 /*if is a ctrl command does the work accordingly*/
-
 
 /*struct named tokens: will have command arguments and operators*/
 /*to tokenize:

@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:20:18 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 14:20:32 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:33:21 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int	*r_quicksort(int *tab, unsigned int size)
 {
-	unsigned int	i = 0;
-	int	temp;
+	unsigned int	i;
+	int		temp;
 
+	i = 0;
+	temp = 0;
 	while (i < (size - 1))
 	{
 		if (tab[i] < tab[i + 1])

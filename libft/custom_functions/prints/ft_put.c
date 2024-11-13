@@ -6,18 +6,18 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:10:17 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/13 10:13:25 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:31:39 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
-
 
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
+
 int	ft_putstr(char *str)
 {
 	int	i;
@@ -30,13 +30,13 @@ int	ft_putstr(char *str)
 	}
 	return (i);
 }
+
 int	ft_print_ptr(unsigned long long *ptr)
 {
-	int	len;
-
-	len = 0;
+	int					len;
 	unsigned long long	pointer;
 
+	len = 0;
 	pointer = (unsigned long long)ptr;
 	len += ft_putstr("0x");
 	if (pointer == 0)

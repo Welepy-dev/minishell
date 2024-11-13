@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 10:13:43 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:23:41 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,21 +85,21 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size);
 double	ft_atof(const char *str);
 double	ft_pow(double base, double exp);
 
-char		*ft_itoa(int n);
-char		*get_next_line(int fd);
-char		*ft_strdup(const char *s);
-char		*ft_strsjoin(char *s1, char *s2);
-char		*ft_strchr(const char *str, int c);
-char		*ft_strrchr(const char *str, int c);
-char		*ft_strcat(char *dest, const char *src);
-char		*ft_strscat(char *dest, const char *src);
-char		*ft_strjoin(char const *s1, char const *s2);
-char		*ft_strtrim(const char *s1, const char *set);
-char		*ft_strncat(char *dest, const char *src, size_t n);
-char		*ft_strsncat(char *dest, const char *src, size_t n);
-char		*ft_strnstr(const char *s, const char *a, size_t n);
-char		*ft_substr(const char *s, unsigned int start, size_t len);
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_itoa(int n);
+char	*get_next_line(int fd);
+char	*ft_strdup(const char *s);
+char	*ft_strsjoin(char *s1, char *s2);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strrchr(const char *str, int c);
+char	*ft_strcat(char *dest, const char *src);
+char	*ft_strscat(char *dest, const char *src);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(const char *s1, const char *set);
+char	*ft_strncat(char *dest, const char *src, size_t n);
+char	*ft_strsncat(char *dest, const char *src, size_t n);
+char	*ft_strnstr(const char *s, const char *a, size_t n);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	**copy_matrix(char **matrix);
 char	**ft_split(char const *s, char c);

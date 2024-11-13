@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:36 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 18:15:21 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/13 10:22:12 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 typedef struct s_shell	t_shell;
 
-typedef enum	e_type
+typedef enum e_type
 {
 	COMMAND,
 	ARGUMENT,
@@ -38,14 +38,14 @@ typedef enum	e_type
 
 typedef struct s_token
 {
-	char	*value;
-	t_type	type;
-    	struct s_token *next;
+	char			*value;
+	t_type			type;
+	struct s_token	*next;
 }	t_token;
 
 typedef struct s_tree
 {
-	t_shell	*shell;
+	t_shell			*shell;
 	struct s_tree	*left;
 	struct s_tree	*right;
 }	t_tree;
