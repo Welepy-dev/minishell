@@ -6,28 +6,45 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 14:34:20 by welepy            #+#    #+#              #
-#    Updated: 2024/11/12 18:35:19 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/13 10:11:43 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= minishell
-CC	= cc
-CFLAGS	= -Wall -Wextra -Werror -lreadline
-OBJS	= $(SRCS:.c=.o)
-SRCS	= minishell.c
-LIBFT	= ./libft/libft.a
+NAME    = minishell
+CC      = cc
+CFLAGS  = -Wall -Wextra -Werror
+LRFLAGS = -lreadline
+OBJS    = $(SRCS:.c=.o)
+SRCS    = minishell.c
+HEADER  = minishell.h
+LIBFT	= libft  # Name of the subfolder containing the Makefile
+lft	= $(LIBFT)/libft.a
+OBJ_DIR = .
+
+
+OBJ_PATHS = $(addprefix $(OBJ_DIR)/, $(OBJS))
+LIBFT = ./libft/
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+LIBMAKE = $(MAKE) -C $(LIBFT)
 
-clean: 
+$(NAME):	$(OBJ_PATHS) 
+		$(MAKE) -C $(LIBFT)
+		$(CC) $(OBJ_PATHS) -L./libft -lft $(LRFLAGS) $(CFLAGS) -o $(NAME)
+
+# Recursively invoke make in the subfolder
+submake:
+	$(LIBMAKE)
+  
+clean:
 	rm -f $(OBJS)
+	$(LIBMAKE) clean
 
 fclean: clean
 	rm -f $(NAME)
+	$(LIBMAKE) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re LIBMAKE

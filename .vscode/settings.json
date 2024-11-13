@@ -5,6 +5,8 @@
 		"wait.h": "c",
 		"stdio.h": "c",
 		"types.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"readline.h": "c",
+		"history.h": "c"
 	}
 }

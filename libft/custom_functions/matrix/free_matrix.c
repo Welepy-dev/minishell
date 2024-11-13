@@ -6,11 +6,11 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:30:54 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 14:31:09 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 09:48:41 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 void	free_matrix(char **matrix)
 {

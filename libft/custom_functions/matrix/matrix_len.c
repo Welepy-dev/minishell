@@ -6,11 +6,11 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:30:10 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 14:30:19 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 09:48:57 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 int	matrix_len(char **matrix)
 {

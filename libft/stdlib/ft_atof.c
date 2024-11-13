@@ -6,13 +6,13 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:50:06 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/11 13:59:22 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:09:05 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static double	ft_pow(double base, int exp)
+static double	a_p(double base, int exp)
 {
 	double	result;
 
@@ -33,7 +33,7 @@ static double	ft_pow(double base, int exp)
 	return (result);
 }
 
-static int	ft_atoi(const char *str, double num, int i)
+static int	convert(const char *str, double num, int i)
 {
 	while (ft_isdigit(str[i]))
 	{
@@ -63,11 +63,11 @@ double	ft_atof(const char *str)
 		isneg *= -1;
 		i++;
 	}
-	num = ft_atoi(str, num, i);
+	num = convert(str, num, i);
 	if (str[i] == '.')
 	{
 		i++;
-		ft_atoi(str, decimal, i);
+		convert(str, decimal, i);
 	}
-	return ((num + (decimal / ft_pow(10, i))) * isneg);
+	return ((num + (decimal / a_p(10, i))) * isneg);
 }

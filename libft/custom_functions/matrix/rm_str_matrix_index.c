@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rm_str_matrix_index.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:42:51 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/11 17:44:11 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/13 09:49:08 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 char	**rm_str_matrix_index(char **matrix, int index)
 {

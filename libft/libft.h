@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: welepy <welepy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/12 18:08:54 by welepy           ###   ########.fr       */
+/*   Updated: 2024/11/13 10:13:43 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_atoi(const char *str);
 int		matrix_len(char **matrix);
+int		lower(unsigned int decimalnumber);
 int		ft_print_unsigned(unsigned int n);
 int		ft_print_ptr(unsigned long long *ptr);
 int		ft_printf(const char *my_string, ...);
