@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:36 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 17:37:49 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 21:33:06 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ bool	validate_quote_number(char *input);
 bool	extract_operator_util(char **input);
 
 int		word_count_util(char *i, int count);
-int		count_quote(char *input, char quote);
+int		count_char(char *input, char c);
 
 t_env	*convert_env(char **env);
 
