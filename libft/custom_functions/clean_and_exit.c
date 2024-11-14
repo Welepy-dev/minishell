@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:05:06 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/14 20:33:10 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 22:01:28 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	clean_and_exit(t_generic *data)
 	shell->input
 	shell->matrix (also each word)
 	temp string at extract_quote
+	tab at search_env
 */
