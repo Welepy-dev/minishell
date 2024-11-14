@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 16:06:10 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/13 18:04:01 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ bool	ft_isalpha(int c);
 bool	ft_isascii(int c);
 bool	ft_isspace(int c);
 bool	in_range(int n, int min, int max);
-bool	ft_strbspn(char *str, char accept);
 bool	contains_char(char *str, char *set);
 
 void	*safe_malloc(size_t size);
@@ -96,13 +95,16 @@ char	*ft_strsjoin(char *s1, char *s2);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strndup(const char *s1, size_t n);
+char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strscat(char *dest, const char *src);
+char	*ft_strnchr(const char *s, int c, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 char	*ft_strsncat(char *dest, const char *src, size_t n);
 char	*ft_strnstr(const char *s, const char *a, size_t n);
+char	*ft_strncpy(char *dst, const char *src, size_t len);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
