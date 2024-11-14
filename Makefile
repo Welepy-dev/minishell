@@ -6,20 +6,20 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 14:34:20 by welepy            #+#    #+#              #
-#    Updated: 2024/11/13 15:19:04 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/14 13:05:42 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    = minishell
-CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
-LRFLAGS = -lreadline
-OBJS    = $(SRCS:.c=.o)
-SRCS    = minishell.c
-HEADER  = minishell.h
-LIBFT	= libft  # Name of the subfolder containing the Makefile
-lft	= $(LIBFT)/libft.a
-OBJ_DIR = .
+NAME		= minishell
+CC		= cc
+CFLAGS		= -Wall -Wextra -Werror
+LRFLAGS		= -lreadline
+OBJS		= $(SRCS:.c=.o)
+SRCS		= ./utils/parse_utils/utils.c ./split/split_input_ext.c ./split/split_input.c minishell.c
+HEADER		= minishell.h
+LIBFT		= libft  # Name of the subfolder containing the Makefile
+lft		= $(LIBFT)/libft.a
+OBJ_DIR 	= .
 
 
 OBJ_PATHS = $(addprefix $(OBJ_DIR)/, $(OBJS))
