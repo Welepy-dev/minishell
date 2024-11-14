@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:55:56 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 16:36:07 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 16:54:58 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,29 +91,6 @@ static char	*extract_quote(char **input)
 	return (quote_string);
 }
 
-/*static char	*extract_quote(char **input)
-{
-	int		i = 0;
-	char	quote = **input;
-	char	*quote_string;
-
-	(*input)++;
-	while (**input)
-	{
-		if (**input == quote && *(*input + 1) != quote)
-			break;
-		else if (**input == quote)
-			(*input)++;
-		(*input)++;
-		i++;
-	}
-	quote_string = fill_quote(input, quote, i);
-	if (**input)
-		(*input)++;
-	printf("quote_string: %s\n", quote_string);
-	return (quote_string);
-}*/
-
 char	**split_input(char *input)
 {
 	char	**matrix;
@@ -147,3 +124,26 @@ char	**split_input(char *input)
 		return (NULL);
 	return (matrix);
 }
+
+/*static char	*extract_quote(char **input)
+{
+	int		i = 0;
+	char	quote = **input;
+	char	*quote_string;
+
+	(*input)++;
+	while (**input)
+	{
+		if (**input == quote && *(*input + 1) != quote)
+			break;
+		else if (**input == quote)
+			(*input)++;
+		(*input)++;
+		i++;
+	}
+	quote_string = fill_quote(input, quote, i);
+	if (**input)
+		(*input)++;
+	printf("quote_string: %s\n", quote_string);
+	return (quote_string);
+}*/
