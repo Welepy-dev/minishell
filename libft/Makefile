@@ -6,7 +6,7 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 01:14:20 by marcsilv          #+#    #+#              #
-#    Updated: 2024/11/14 16:31:51 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/14 17:02:30 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ CTYPE		=	./ctype/ft_isalnum.c				\
 PRINTF		=	./custom_functions/prints/ft_put.c		\
 			./custom_functions/prints/ft_printf.c		\
 			./custom_functions/prints/print_error.c		\
+			./custom_functions/ft_fprintf/ft_fprintf_utils.c	\
+			./custom_functions/ft_fprintf/ft_fprintf.c		\
 
 CUSTOM		=	./custom_functions/ft_split.c			\
 			./custom_functions/get_next_line.c		\
