@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 16:59:54 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 20:03:39 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int		*quicksort(int *tab, unsigned int size);
 int		ft_fprintf(int fd, const char *str, ...);
 int		ft_strcmp(const char *s1, const char *s2);
 int		*r_quicksort(int *tab, unsigned int size);
+int		ft_strcspn(const char *s, const char *reject);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
