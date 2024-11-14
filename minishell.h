@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:36 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 09:35:03 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:48:23 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef enum e_type
 	REDIRECTION,
 	VARIABLE,
 	SIGNAL,
+	SINGLE_QUOTE,
+	DOUBLE_QUOTE,
 }	t_type;
 
 typedef struct s_token
@@ -67,5 +69,12 @@ struct s_shell
 };
 
 char	**split_input(char *input);
+char	*extract_variable(char **input);
+char	*fill_quote(char **input, char quote, int i);
+
+bool	validate_quote_number(char *input);
+bool	extract_operator_util(char **input);
+int		count_quote(char *input, char quote);
+int		word_count_util(char *i, int count);
 
 #endif

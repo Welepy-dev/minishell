@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnchr.c                                       :+:      :+:    :+:   */
+/*   ft_string_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 16:27:37 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 10:51:50 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/11/14 16:27:00 by marcsilv          #+#    #+#             */
+/*   Updated: 2024/11/14 16:30:26 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strnchr(const char *s, int c, size_t n)
+char	*ft_string_split(char *str, char c)
 {
-	size_t	i;
+	char	*split;
+	int		i;
 
 	i = 0;
-	while (i < n)
+	while (str[i] && str[i] != c)
+		i++;
+	split = safe_malloc(sizeof(char) * (i + 1));
+	i = 0;
+	while (str[i] && str[i] != c)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
+		split[i] = str[i];
 		i++;
 	}
-	return (NULL);
+	split[i] = '\0';
+	return (split);
 }

@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 18:04:01 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 16:30:40 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ char	*ft_strdup(const char *s);
 char	*ft_strsjoin(char *s1, char *s2);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
+char	*ft_string_split(char *str, char c);
 char	*ft_strndup(const char *s1, size_t n);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strcat(char *dest, const char *src);
