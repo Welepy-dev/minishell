@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:22:46 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 16:10:14 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 10:02:10 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,27 @@
 
 static char	*extract_quote(char **input)
 {
-	char	*quote;
 	int		i;
-
+	char	start_quote;						//".....$USER...."
+	char	*quote;		
+	char	*temp;
 	i = 0;
+	start_quote = **input;
 	(*input)++;							//ignorar o primeiro character "\"" ou "\'"
-	while ((**input != '\'' || **input != '\"') && (**input))	//saber o tabanho da string dentro de ("")  exemplo: ".....$USER...." i = 14
+	while ((**input != start_quote) && (**input))			//saber o tabanho da string dentro de ("")  exemplo: ".....$USER...." i = 14
 	{
 		(*input)++;
 		i++;
 	}
-	quote = ft_strndup((*input) - i, (i - 1));
+	temp = ft_strndup((*input) - i, i);
+	quote = safe_malloc(sizeof(char) * (i + 3));
+	quote[0] = start_quote;
+	ft_strncpy(quote + 1, temp, i);
+	quote[i] = start_quote;
+
 	if (**input)
 		(*input)++;						//se for != de null avança para a proxima casa, desse jeito ignora as ulimas aspas
+	free (temp);
 	printf("quote: %s\n", quote);
 	return (quote);
 }
@@ -41,8 +49,6 @@ static char	*extract_operator(char **input)
 	temp_char = **input;
 	operator_size = 0;
 	i = 0;
-	if (!ft_strbspn(*input, temp_char))
-		print_error("Parse error", NULL);
 	while ((**input == temp_char) && (operator_size < 2))
 	{
 		++operator_size;
@@ -50,15 +56,12 @@ static char	*extract_operator(char **input)
 	}
 	operator = safe_malloc(sizeof(char) * (operator_size + 1));
 	while (i < operator_size)
-	{
 		operator[i++] = temp_char;
-		(*input)++;
-	}
 	operator[i] = '\0';
 	printf("operator %s\n", operator);
 	return (operator);
 }
-
+//is thiking that space is an operator
 
 //tem de se fazer ajustes para que se contar ".......$USER...." como uma unica string
 static int	word_count(char *input)
@@ -88,7 +91,7 @@ char	*extract_command(char **input)
 	int	i;
 
 	i = 0;
-	while (**input && !ft_isspace(**input))
+	while (**input && !ft_isspace(**input) && !ft_strchr("|<>&*", **input) && !ft_strchr("\'\"", **input))
 	{
 		i++;
 		(*input)++;
@@ -114,29 +117,30 @@ char	**split_input(char *input)
 			input++;
 		if (*input == '\'' || *input == '\"')
 			matrix[y++] = extract_quote(&input);
-		else if (contains_char(input, "|<>&*"))
+		else if (ft_strchr("|<>&", *input))
 			matrix[y++] = extract_operator(&input);
 		else if (ft_isalnum(*input))
 			matrix[y++] = extract_command(&input);
-		/*else
-		{
-			ft_putstr_fd("Parse error at: ", 2);
-			ft_putchar_fd(*input, 2);
-			ft_putchar_fd('\n', 2);
-		}*/
 	}
 	matrix[y] = NULL;
 	if (matrix == NULL)
 		print_error("Parse error", NULL);
 	return (matrix);
 }
+/*		TODO
+	error when ends with a quote, maybe in the matrix should take care of it
+	fix word count
+	concatenate when a endquote is folowerd by a startquote
+	env variables
+	at the end of else chain if it finds a bad char or wrong char e.g. when extracts a opeartor but still finds a operator
+*/
 
 int	main(int ac, char **av, char **env)
 {
 	t_shell	shell;
 
 	(void)av;
-	(void)env;
+	(void)env;						//temporary
 	if (ac != 1)
 		print_error("Error: too many arguments", NULL);
 	//initialize shell
@@ -146,14 +150,15 @@ int	main(int ac, char **av, char **env)
 		shell.input = readline("minishell$ ");
 		if (!shell.input)
 			break ;
+		add_history(shell.input);
 		shell.matrix = split_input(shell.input);
 		if (!shell.matrix)
 			continue ;
-		printf("input: %s\n", shell.input);
-		printf("matrix:\n");
-		int	y = 0;
-		while (shell.matrix[y])
-			printf("%s\n", shell.matrix[y++]);
+		// printf("input: %s\n", shell.input);
+		// printf("matrix:\n");
+		// int	y = 0;
+		// while (shell.matrix[y])
+		// 	printf("%s\n", shell.matrix[y++]);
 		// //parse the input
 		// 	//tokenize the input
 		// 	//parse the tokens
