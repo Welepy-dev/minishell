@@ -6,7 +6,7 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 01:14:20 by marcsilv          #+#    #+#              #
-#    Updated: 2024/11/14 17:02:30 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/14 19:20:21 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,6 +105,7 @@ STRING		= 	./string/ft_bzero.c				\
 			./string/ft_strcpy.c				\
 			./string/ft_strncpy.c				\
 			./string/ft_string_split.c			\
+			./string/ft_strcspn.c				\
 
 STDLIB		= 	./stdlib/ft_abs.c				\
 			./stdlib/ft_atof.c				\
