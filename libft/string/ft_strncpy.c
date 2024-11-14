@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_and_exit.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 17:05:06 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/14 09:43:27 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/11/13 18:03:20 by marcsilv          #+#    #+#             */
+/*   Updated: 2024/11/13 18:03:27 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	clean_and_exit(t_generic *data)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	if (data->input)
-		free(data->input);
-	if (data->matrix)
-		free_matrix(data->matrix);
-	if (data)
-		free(data);
-	exit(1);
-}
+	size_t	i;
 
-/*
-	shell->input
-	shell->matrix (also each word)
-	temp string at extract_quote
-*/
+	i = 0;
+	while (src[i] && i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	while (i < len)
+		dst[i++] = '\0';
+	return (dst);
+}

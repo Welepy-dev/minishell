@@ -6,7 +6,7 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 01:14:20 by marcsilv          #+#    #+#              #
-#    Updated: 2024/11/13 16:06:04 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/13 18:04:06 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,6 @@ BOOLS		=	./custom_functions/bools/isneg.c 		\
 			./custom_functions/bools/ispos.c		\
 			./custom_functions/bools/in_range.c		\
 			./custom_functions/bools/contains_char.c	\
-			./custom_functions/bools/ft_strbspn.c		\
 
 LISTS		=	./lists/ft_lstadd_back.c			\
 			./lists/ft_lstadd_front.c			\
@@ -100,6 +99,9 @@ STRING		= 	./string/ft_bzero.c				\
 			./string/ft_strtrim.c				\
 			./string/ft_substr.c				\
 			./string/ft_strndup.c				\
+			./string/ft_strnchr.c				\
+			./string/ft_strcpy.c				\
+			./string/ft_strncpy.c				\
 
 STDLIB		= 	./stdlib/ft_abs.c				\
 			./stdlib/ft_atof.c				\
