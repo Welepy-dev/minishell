@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:05:06 by welepy            #+#    #+#             */
-/*   Updated: 2024/11/14 20:19:03 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 20:33:10 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	clean_and_exit(t_generic *data)
 		free_matrix(data->matrix);
 	if (data->env)
 		ft_lstclear((t_list **)&data->env, free);
-	exit(1);
+	exit(0);
 }
 
 /*
