@@ -6,20 +6,20 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:03:41 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 16:06:02 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 21:32:51 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minishell.h"
 
-int	count_quote(char *input, char quote)
+int	count_char(char *input, char c)
 {
 	int	count;
 
 	count = 0;
 	while (*input)
 	{
-		if (*input == quote)
+		if (*input == c)
 			count++;
 		input++;
 	}
@@ -31,8 +31,8 @@ bool	validate_quote_number(char *input)
 	int	count_single;
 	int	count_double;
 
-	count_single = count_quote(input, '\'');
-	count_double = count_quote(input, '\"');
+	count_single = count_char(input, '\'');
+	count_double = count_char(input, '\"');
 	if (count_single % 2 || count_double % 2)
 		return (false);
 	return (true);
