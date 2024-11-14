@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 12:36:10 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/13 12:36:22 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 20:06:23 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strndup(const char *s1, size_t n)
 	size_t	i;
 
 	i = 0;
-	str = malloc(sizeof(char) * (n + 1));
+	str = safe_malloc(sizeof(char) * (n + 1));
 	if (!str)
 		return (NULL);
 	while (s1[i] && i < n)
