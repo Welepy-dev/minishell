@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 16:30:40 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/14 16:59:54 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		ft_print_unsigned(unsigned int n);
 int		ft_print_ptr(unsigned long long *ptr);
 int		ft_printf(const char *my_string, ...);
 int		*quicksort(int *tab, unsigned int size);
+int		ft_fprintf(int fd, const char *str, ...);
 int		ft_strcmp(const char *s1, const char *s2);
 int		*r_quicksort(int *tab, unsigned int size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -75,11 +76,17 @@ void	ft_putstr_fd(const char *s, int fd);
 void	*ft_realloc(void *ptr, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_fputnbr(int fd, int nbr, int *res);
+void	ft_fputstr(int fd, char *s, int *res);
+void	ft_fputchar(int fd, char c, int *res);
+void	ft_fprintptr(int fd, void *ptr, int *res);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	print_error(char *error_message, void *data);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_fprintbase(int fd, unsigned long long nbr, char *simbol,
+			int *res, unsigned int base);
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
