@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:22:46 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/15 13:12:33 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:44:03 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	main(int ac, char **av, char **environment)
 {
 	t_shell	shell;
+	int		y;
 
 	shell.env = NULL;
-
-
+	y = 0;
 	if (ac != 1)
 		print_error("Error: too many arguments", NULL);
 	shell.env = convert_env(environment);
@@ -35,10 +35,14 @@ int	main(int ac, char **av, char **environment)
 			continue ;
 		}
 		expand(&shell.matrix, shell.env);
-		int	y = 0;
 		while (shell.matrix[y])
 			printf("%s\n", shell.matrix[y++]);
 	}
+	(void)av;
+	return (0);
+}
+
+/*
 	// char **split = ft_split(environment[0], '=');
 	// printf("%s\n", split[0]);
 	// printf("%s\n", split[1]);
@@ -71,11 +75,6 @@ int	main(int ac, char **av, char **environment)
 	// 		continue ;
 	// }
 	// clean_and_exit(&shell);
-	(void)av;
-	return (0);
-}
-
-/*
 //initialize shell
 	//read the input
 		// //parse the input

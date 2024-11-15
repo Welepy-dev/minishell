@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: efinda <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:01:32 by efinda            #+#    #+#             */
-/*   Updated: 2024/06/07 13:01:39 by efinda           ###   ########.fr       */
+/*   Updated: 2024/11/15 15:49:32 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,12 @@ static	void	ft_fcheck_identif(va_list args, int fd, const char *s, int *res)
 	else if (*s == 'x')
 	{
 		ft_fprintbase(fd, va_arg(args, unsigned int),
-			"0123456789abcdef", res, 16);
+			"0123456789abcdef", res);
 	}
 	else if (*s == 'X')
 	{
 		ft_fprintbase(fd, va_arg(args, unsigned int),
-			"0123456789ABCDEF", res, 16);
-	}
-	else if (*s == 'u')
-	{
-		ft_fprintbase(fd, va_arg(args, unsigned int),
-			"0123456789", res, 10);
+			"0123456789ABCDEF", res);
 	}
 	else if (*s == 'p')
 		ft_fprintptr(fd, va_arg(args, void *), res);

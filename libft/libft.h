@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:02:03 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 20:03:39 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:48:00 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_fprintbase(int fd, unsigned long long nbr, char *simbol,
-			int *res, unsigned int base);
+			int *res);
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);

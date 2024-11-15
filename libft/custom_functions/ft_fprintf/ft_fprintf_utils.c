@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_fprintf_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: efinda <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:02:30 by efinda            #+#    #+#             */
-/*   Updated: 2024/06/07 13:02:33 by efinda           ###   ########.fr       */
+/*   Updated: 2024/11/15 15:48:37 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void	ft_fputnbr(int fd, int nbr, int *res)
 }
 
 void	ft_fprintbase(int fd, unsigned long long nbr, char *simbol,
-			int *res, unsigned int base)
+			int *res)
 {
-	if (nbr >= base)
-		ft_fprintbase(fd, nbr / base, simbol, res, base);
-	ft_fputchar(fd, simbol[nbr % base], res);
+	if (nbr >= 16)
+		ft_fprintbase(fd, nbr / 16, simbol, res);
+	ft_fputchar(fd, simbol[nbr % 16], res);
 }
 
 void	ft_fprintptr(int fd, void *ptr, int *res)
@@ -67,7 +67,7 @@ void	ft_fprintptr(int fd, void *ptr, int *res)
 	if (ptr)
 	{
 		ft_fputstr(fd, "0x", res);
-		ft_fprintbase(fd, p, "0123456789abcdef", res, 16);
+		ft_fprintbase(fd, p, "0123456789abcdef", res);
 	}	
 	else
 		ft_fputstr(fd, "(nil)", res);

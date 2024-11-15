@@ -1,0 +1,144 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    chat.txt                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/14 19:21:27 by marcsilv          #+#    #+#              #
+#    Updated: 2024/11/15 13:04:16 by marcsilv         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+typedef struct s_shell	t_shell;
+
+typedef struct s_env
+{
+	char			*name;
+	char			*value;
+	struct s_env	*next;
+}	t_env;
+
+struct s_shell
+{
+	t_token	*token;
+	t_tree	*tree;
+	t_env	*env;
+	char	**matrix;
+	char	*input;
+};
+
+static char	*get_env_value(t_env *env, char *name)
+{
+	t_env	*tmp;
+
+	tmp = env;
+	while (tmp)
+	{
+		if (!ft_strcmp(tmp->name, name))
+			return (tmp->value);
+		tmp = tmp->next;
+	}
+	return (NULL);
+}
+
+void	expand(char ***matrix, t_env *env)
+{
+	int		y;
+	
+	y = 0;
+	while ((*matrix)[y])
+	{
+		if ((*matrix)[y][0] == '$')
+		{
+			free((*matrix)[y]);
+			(*matrix)[y] = ft_strdup(get_env_value(env, &(*matrix)[y][1]));
+		}
+		y++;
+	}
+}
+
+t_env	*convert_env(char **env)
+{
+	t_env	*list;
+	t_env	*new;
+	int		i;
+
+	list = NULL;
+	i = 0;
+	while (env[i])
+	{
+		new = malloc(sizeof(t_env));
+		if (!new)
+		{
+			ft_lstclear((t_list **)&list, free);
+			return (NULL);
+		}
+		new->name = ft_strndup(env[i], ft_strcspn(env[i], "="));
+		new->value = ft_strdup(env[i] + ft_strcspn(env[i], "=") + 1);
+		new->next = NULL;
+		ft_lstadd_back((t_list **)&list, (t_list *)new);
+		i++;
+	}
+	return (list);
+}
+
+char	**split_input(char *input)
+{
+	char	**matrix;
+	int		y;
+
+	y = 0;
+	if (!input)
+		return (NULL);
+	matrix = safe_malloc(sizeof(char *) * (word_count(input) + 1));
+	if (!validate_quote_number(input))
+		printf("Error: can't parse unclosed quotes\n");			//use fprintf
+	// printf("word count: %d\n", word_count(input));
+	while (*input)
+	{
+		while ((ft_isspace(*input)) && *input)
+			input++;
+		if (*input == '\'' || *input == '\"')
+			matrix[y++] = extract_quote(&input);
+		else if (ft_strchr("|<>*&", *input))
+			matrix[y++] = extract_operator(&input);
+		else if (ft_isalnum(*input) || *input == '_' || *input == '/' \
+		|| *input == '.' || *input == '-' || *input == '~')
+			matrix[y++] = extract_command(&input);
+		else if (*input == '$')
+			matrix[y++] = extract_variable(&input);
+		else
+			printf("Error: invalid character %c\n", *input++);	//use fprintf
+	}
+	matrix[y] = NULL;
+	if (matrix == NULL)
+		return (NULL);
+	return (matrix);
+}
+
+int	main(int ac, char **av, char **environment)
+{
+	t_shell	shell;
+
+	shell.env = NULL;
+
+
+	if (ac != 1)
+		print_error("Error: too many arguments", NULL);
+	shell.env = convert_env(environment);
+	while (1)
+	{
+		shell.input = readline("minishell$ ");
+		if (!shell.input)
+			break ;
+		add_history(shell.input);
+		shell.matrix = split_input(shell.input);
+		expand(&shell.matrix, shell.env);
+		int	y = 0;
+		while (shell.matrix[y])
+			printf("%s\n", shell.matrix[y++]);
+	}
+	(void)av;
+	return (0);
+}

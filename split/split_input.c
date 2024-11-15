@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:55:56 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/15 12:38:48 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:45:31 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char	**split_input(char *input)
 		return (NULL);
 	matrix = safe_malloc(sizeof(char *) * (word_count(input) + 1));
 	if (!validate_quote_number(input))
-		printf("Error: can't parse unclosed quotes\n");			//use fprintf
+		ft_fprintf(stderr, "Error: can't parse unclosed quotes\n");
 	// printf("word count: %d\n", word_count(input));
 	while (*input)
 	{
@@ -117,7 +117,7 @@ char	**split_input(char *input)
 		else if (*input == '$')
 			matrix[y++] = extract_variable(&input);
 		else
-			printf("Error: invalid character %c\n", *input++);	//use fprintf
+			ft_fprintf(stderr, "Error: invalid character %c\n", *input++);
 	}
 	matrix[y] = NULL;
 	if (matrix == NULL)

@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 20:37:07 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/15 13:13:33 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:42:46 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	expand(char ***matrix, t_env *env)
 {
 	int		y;
 	char	*value;
-	
+
 	y = 0;
 	while ((*matrix)[y])
 	{
