@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:55:56 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 16:54:58 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/15 12:38:48 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static char	*extract_operator(char **input)
 	while (i < operator_size)
 		operator[i++] = temp_char;
 	operator[i] = '\0';
-	printf("operator: %s\n", operator);
+	// printf("operator: %s\n", operator);
 	return (ft_string_split(operator, ' '));
 }
 

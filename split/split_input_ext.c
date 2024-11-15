@@ -6,7 +6,7 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 11:52:59 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/11/14 14:11:21 by marcsilv         ###   ########.fr       */
+/*   Updated: 2024/11/15 12:39:39 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ char	*extract_variable(char **input)
 	ft_strncpy(variable + 1, temp, i);
 	variable[i + 1] = '\0';
 	free(temp);
-	printf("variable %s\n", variable);
+	// printf("variable %s\n", variable);
 	return (variable);
 }
