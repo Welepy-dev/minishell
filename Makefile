@@ -6,7 +6,7 @@
 #    By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 14:34:20 by welepy            #+#    #+#              #
-#    Updated: 2024/11/14 17:38:20 by marcsilv         ###   ########.fr        #
+#    Updated: 2024/11/15 12:23:12 by marcsilv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC		= cc
 CFLAGS		= -Wall -Wextra -Werror
 LRFLAGS		= -lreadline
 OBJS		= $(SRCS:.c=.o)
-SRCS		= ./utils/env/convert_env.c ./utils/parse_utils/utils.c ./split/split_input_ext.c ./split/split_input.c minishell.c
+SRCS		= ./utils/env/expand.c ./utils/env/convert_env.c ./utils/parse_utils/utils.c ./split/split_input_ext.c ./split/split_input.c minishell.c
 HEADER		= minishell.h
 LIBFT		= libft  # Name of the subfolder containing the Makefile
 lft		= $(LIBFT)/libft.a
