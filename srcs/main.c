@@ -6,57 +6,13 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:16:24 by mchingi           #+#    #+#             */
-/*   Updated: 2025/04/02 13:38:58 by marcsilv         ###   ########.fr       */
+/*   Updated: 2025/04/04 15:10:05 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minihell.h"
 
 volatile sig_atomic_t	g_sigint;
-char	*token_kind_string(t_type type)
-{
-	if (type == GREATER)
-		return ("GREATER");
-	else if (type == LESSER)
-		return ("LESSER");
-	else if (type == APPEND)
-		return ("APPEND");
-	else if (type == HERE_DOC)
-		return ("Here-doc");
-	else if (type == PIPE)
-		return ("PIPE");
-	else if (type == COMMAND)
-		return ("COMMAND");
-	else if (type == ARGUMENT)
-		return ("ARGUMENT");
-	else if (type == SINGLE_QUOTE)
-		return ("SINGLE_QUOTE");
-	else if (type == DOUBLE_QUOTE)
-		return ("DOUBLE QUOTE");
-	else if (type == BUILTINS)
-		return ("Builtins");
-	else if (type == OPTION)
-		return ("OPTION");
-	else if (type == FULL_COMMAND)
-		return ("FULL_COMMAND");
-	else if (type == IDENTIFIER)
-		return ("IDENTIFIER");
-	else
-		return ("UNKNOWN");
-}
-
-void	debug(t_token *token)
-{
-	t_token	*head;
-
-	head = token;
-	while (head)
-	{
-		printf("%s, type: %s\n", head->value, token_kind_string(head->type));
-		head = head->next;
-	}
-	printf("\n");
-}
 
 static bool	read_input(t_shell *shell)
 {
@@ -109,7 +65,6 @@ void	repl(t_shell *shell)
 		if (!read_input(shell))
 			continue ;
 		parse(shell);
-		// debug(shell->token);
 		if (shell->flag)
 		{
 			executer(shell, shell->token);

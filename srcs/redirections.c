@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchingi <mchingi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 11:36:50 by mchingi           #+#    #+#             */
-/*   Updated: 2025/03/24 18:08:57 by mchingi          ###   ########.fr       */
+/*   Updated: 2025/04/03 18:34:43 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	redirect_output_append(t_token *token, t_shell *shell)
 {
 	int	fd;
 
+	printf("valor [%s]\n", token->value);
 	if (redirections_error_handler(token))
 	{
 		if (!token->next)

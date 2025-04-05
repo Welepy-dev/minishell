@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchingi <mchingi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 21:08:38 by mchingi           #+#    #+#             */
-/*   Updated: 2025/03/24 17:15:07 by mchingi          ###   ########.fr       */
+/*   Updated: 2025/04/03 18:05:23 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**env_to_matrix(t_env *env)
 	return (matrix);
 }
 
-char	*remove_quotes(const char *str)
+char	*remove_quotes(const char *str, bool flag)
 {
 	size_t	len;
 	size_t	new_len;
@@ -89,6 +89,11 @@ char	*remove_quotes(const char *str)
 	if (len >= 2 && ((str[0] == '"' && str[len - 1] == '"')
 			|| (str[0] == '\'' && str[len - 1] == '\'')))
 	{
+		if (len <= 4 && flag)
+			if ((len == 3 && is_char_operator(str[1]))
+				|| (len == 4 && is_char_operator(str[1])
+					&& is_char_operator(str[2])))
+				return (ft_strdup(str));
 		new_len = len - 2;
 		new_str = safe_malloc(new_len + 1);
 		ft_strncpy(new_str, str + 1, new_len);

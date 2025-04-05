@@ -6,7 +6,7 @@
 /*   By: mchingi <mchingi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 15:26:37 by welepy            #+#    #+#             */
-/*   Updated: 2025/03/28 09:45:26 by mchingi          ###   ########.fr       */
+/*   Updated: 2025/03/23 16:50:39 by mchingi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ void	handle_arguments(t_token *temp)
 
 void	handle_redirections(t_token **temp)
 {
-	if (*temp && is_redirection((*temp)->type))
+	while (*temp && is_redirection((*temp)->type))
+	{
 		*temp = (*temp)->next;
+		if (*temp)
+			*temp = (*temp)->next;
+	}
 }

@@ -40,6 +40,28 @@ static t_env	*arg_to_env(t_token *token)
 	return (cur_env);
 }
 
+t_env	*last_env(t_env *env)
+{
+	if (env == NULL)
+		return (NULL);
+	while (env->next != NULL)
+		env = env->next;
+	return (env);
+}
+
+void	add_env(t_env **env, t_env *new)
+{
+	t_env	*t;
+
+	if (*env)
+	{
+		t = last_env(*env);
+		t->next = new;
+	}
+	else
+		*env = new;
+}
+
 static bool	export_error(t_token *head, t_shell *shell, int flag)
 {
 	if (head->next && !ft_strlen(head->next->value) && flag == 0)
@@ -52,25 +74,10 @@ static bool	export_error(t_token *head, t_shell *shell, int flag)
 	if (head->next && head->next->type == OPTION && flag == 1)
 	{
 		shell->exit_status = 1;
-		ft_dprintf(2, "export: this version doesn't support options\n");
+		ft_dprintf(2, "export: this version doesn't support options");
 		return (false);
 	}
 	return (true);
-}
-
-static int	ft_export_util(t_env *env, t_token *token, t_shell *shell)
-{
-	if (!token->next || (token->next && (is_redirection(token->next->type)
-				|| token->next->type == PIPE)))
-	{
-		ft_env(env, token, shell, true);
-		return (1);
-	}
-	else if (!export_error(token, shell, 1))
-		return (1);
-	else if (!export_error(token, shell, 0))
-		return (1);
-	return (0);
 }
 
 void	ft_export(t_env *env, t_token *token, t_shell *shell)
@@ -79,7 +86,11 @@ void	ft_export(t_env *env, t_token *token, t_shell *shell)
 	t_token	*head;
 
 	head = token;
-	if (ft_export_util(env, head, shell))
+	if (!head->next)
+		ft_env(env, head, shell, true);
+	if (!export_error(head, shell, 1))
+		return ;
+	if (!export_error(head, shell, 0))
 		return ;
 	head = head->next;
 	while (head && (head->type == ARGUMENT))

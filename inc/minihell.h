@@ -6,13 +6,13 @@
 /*   By: marcsilv <marcsilv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:16:19 by mchingi           #+#    #+#             */
-/*   Updated: 2025/04/02 16:24:17 by marcsilv         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:59:22 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIHELL_H
 # define MINIHELL_H
-# define PATH_MAX   4096
+# define PATH_MAX	4096
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -116,7 +116,7 @@ int			exit_status_signal(int exit_status);
 int			exit_status_signal_in_pipe(int status);
 //--------------------------------- Tokens -----------------------------------/
 bool		is_command(char *value, char *path);
-void		identify_tokens(t_token *tokens);
+void		identify_tokens(t_token *tokens, char *path);
 void		token_sequence(t_token *tokens);
 void		free_tokens(t_token *head);
 t_token		*tokenize_array(char **array);
@@ -126,7 +126,7 @@ bool		validate_quote_number(char *input);
 void		parse(t_shell *shell);
 int			word_count(char *input);
 char		*get_path(t_env *env);
-char		*remove_quotes(const char *str);
+char		*remove_quotes(const char *str, bool flag);
 char		*extract_quote(char **input);
 char		*extract_operator(char **input, t_shell *shell);
 char		**env_to_matrix(t_env *env);
@@ -160,8 +160,6 @@ char		*get_env_value(char *name, t_env *env);
 void		set_sigint(int *num, char write);
 int			expand_flag(char *input, int i);
 bool		echo_aux(t_token *token, bool *option, char *input);
-void		add_env(t_env **env, t_env *new);
-t_env		*last_env(t_env *env);
 long long	ft_atol(const char *str);
 
 void		handle_arguments(t_token *temp);
@@ -177,5 +175,7 @@ void		copy_unquoted_content(char **current_ptr, char *dest);
 size_t		calculate_unquoted_length(char **current_ptr);
 char		*extract_quote_util(char **input);
 
+char		*fill_quote(char **input, char quote, int i);
 bool		is_quote(char c);
+bool		is_char_operator(char c);
 #endif
