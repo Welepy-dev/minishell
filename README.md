@@ -1,13 +1,23 @@
 # Dependencies
 
 * readline
+
 You can build readline for `ubuntu` with the command
 `sudo apt-get install libreadline-dev`
 
 # Minishell
 
-My implementation of shell based on bash, made with C.
+My implementation of a shell, based on bash, made with C.
+
 It was assigned to me and my partner to build a custom shell with C using bash as an inspiration.
+
+If for some reason this is the first time hearing about shell or bash, here is the definition by [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell):
+
+A Unix-shell is a command line user interface for Unix-like operating systems.
+
+Shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
+
+It is called a shell because it allows the user to access and modify data, through commands,and signals while surrounding the system's kernel for safety.
 
 #### These are the features the shell needs to have:
 
@@ -31,6 +41,7 @@ It was assigned to me and my partner to build a custom shell with C using bash a
 #### With the constraints:
 
 * Use at most one global variable to indicate a received signal. This global variable must only store the signal number and must not provide any additional information or access to data.
+
 * Not interpret unclosed quotes or special characters which are not required by the subject such as \ (backslash) or ; (semicolon).
 
 ## Explanation
@@ -50,9 +61,13 @@ typedef struct	s_token
 ```
 
 Starting with t_token, its a simple doubly liked list, when I first implemented, I thought that I would need access to both next and previous tokens, but later I found out that it wasn't necessary, but it was too late and I was too lazy to delete it (lol).
+
 Also I had the value of each token stored in a normal string.
+
 The last piece of data that I want to talk about this struct is `t_type`.
+
 The first reason that made me choose a linked list to store tokens was to assign each token a type.
+
 So I used an enum to identify all the types I wanted to add to this custom shell:
 
 ### `enum	e_type:`
@@ -120,5 +135,7 @@ typedef struct	s_shell
 }			t_shell;
 ```
 It stores all the necessary information for the execution of the program, like `input` it stores the current line prompted by the user, `exit_status` that, I kid you not, it stores the exit status of the last command executed >shocker<.
+
 You will see a lot of stuff in this project that I implemented initially in this project that I noticed later that I didn't need but never deleted, like that 2d array, I will explain the parsing, but first I splited the input into tiny strings then used that strings for each token's value, but I should just splited the input and directly insert into the tokens, the way I implemented, just added a another layer of chores and I do not recommend.
+
 Finally, there are the pointers to the structs I explained earlier.
